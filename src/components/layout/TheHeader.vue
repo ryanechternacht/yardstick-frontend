@@ -6,7 +6,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item to="summary" :class="{active: area == 'summary'}">Summary</b-nav-item>
-        <b-nav-item to="assessments" :class="{active: area == 'assessment'}">Assessment</b-nav-item>
+        <b-nav-item to="assessments" :class="{active: area == 'assessments'}">Assessments</b-nav-item>
         <b-nav-item to="how-to-help" :class="{active: area == 'how-to-help'}">How to Help</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
@@ -15,11 +15,21 @@
 
 <script>
 export default {
-  name: "the-header",
+  created() {
+    this.updateCurrentArea();
+  },
   data() {
     return {
-      area: "summary"
+      area: null
     };
+  },
+  methods: {
+    updateCurrentArea() {
+      this.area = this.$route.matched.length && this.$route.matched[0].name;
+    }
+  },
+  watch: {
+    $route: "updateCurrentArea"
   }
 };
 </script>

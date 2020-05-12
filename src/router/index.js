@@ -27,55 +27,6 @@ const routes = [
     name: "how-to-help",
     component: HowToHelpOverview
   }
-  // {
-  //   path: "/",
-  //   name: "card-list",
-  //   component: CardList
-  // },
-  // {
-  //   path: "/faq",
-  //   component: FaqLayout,
-  //   name: "faq",
-  //   props(route) {
-  //     return {
-  //       initialSearchTerm: route.params.term
-  //     };
-  //   },
-  //   children: [
-  //     {
-  //       path: "",
-  //       component: FaqHome,
-  //       name: "faq-home"
-  //       // props: true,
-  //     },
-  //     {
-  //       path: "search/:term",
-  //       component: FaqSearchResults,
-  //       name: "faq-search-results",
-  //       props: true
-  //     },
-  //     {
-  //       path: "entry/new",
-  //       component: FaqPageEdit,
-  //       name: "faq-page-new",
-  //       props: {
-  //         id: 0
-  //       }
-  //     },
-  //     {
-  //       path: "entry/:id",
-  //       component: FaqPage,
-  //       name: "faq-page",
-  //       props: true
-  //     },
-  //     {
-  //       path: "entry/:id/edit",
-  //       component: FaqPageEdit,
-  //       name: "faq-page-edit",
-  //       props: true
-  //     }
-  //   ]
-  // }
 ];
 
 const router = new VueRouter({
