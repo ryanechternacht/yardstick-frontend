@@ -5,9 +5,9 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item to="/" :class="{active: area == 'summary'}">Summary</b-nav-item>
-        <b-nav-item to="/faq" :class="{active: area == 'assessment'}">Assessment</b-nav-item>
-        <b-nav-item to="/faq" :class="{active: area == 'how-to-help'}">How to Help</b-nav-item>
+        <b-nav-item to="summary" :class="{active: area == 'summary'}">Summary</b-nav-item>
+        <b-nav-item to="assessments" :class="{active: area == 'assessment'}">Assessment</b-nav-item>
+        <b-nav-item to="how-to-help" :class="{active: area == 'how-to-help'}">How to Help</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
