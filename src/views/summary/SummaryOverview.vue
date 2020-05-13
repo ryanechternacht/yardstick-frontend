@@ -4,9 +4,10 @@
 
     <h3 id class="center">
       {{student.name}} is
-      <span class="at-risk">At Risk</span>
+      <!-- <span class="at-risk">At Risk</span> -->
+      <student-status :student="student" />
       <br />
-      Based on {{student.possessivePronoun}} scores
+      Based on {{student.demographic.possessivePronoun}} scores
       <br />on the PreACT 8/9, Forward Exam and NWEA MAP.
     </h3>
 
@@ -15,12 +16,12 @@
     <div id="actions">
       <router-link tag="div" :to="'assessments'">
         <div class="action-item center">
-          <span>How {{student.name}} is doing across all of {{student.possessivePronoun}} assessments.</span>
+          <span>How {{student.name}} is doing across all of {{student.demographic.possessivePronoun}} assessments.</span>
         </div>
       </router-link>
       <router-link tag="div" :to="'how-to-help'">
         <div class="action-item center">
-          <span>Where {{student.name}} is doing well and where {{student.subjectPronoun}} has room to grow.</span>
+          <span>Where {{student.name}} is doing well and where {{student.demographic.subjectPronoun}} has room to grow.</span>
         </div>
       </router-link>
     </div>
@@ -29,8 +30,12 @@
 
 <script>
 import { mapGetters } from "vuex";
+import StudentStatus from "@/components/summary/StudentStatus";
 
 export default {
+  components: {
+    StudentStatus
+  },
   data() {
     return {};
   },
@@ -62,11 +67,5 @@ export default {
   border-radius: 4px;
   box-shadow: 4px 4px 4px;
   cursor: pointer;
-}
-
-.at-risk {
-  font-weight: bold;
-  color: orange;
-  text-decoration: underline;
 }
 </style>

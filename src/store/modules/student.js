@@ -1,15 +1,25 @@
 // TEST DATA
 let daryl = {
   name: "Daryl",
-  subjectPronoun: "he",
-  possessivePronoun: "his"
+  demographic: {
+    subjectPronoun: "he",
+    possessivePronoun: "his",
+  },
+  academicStatus: {
+    level: "at-risk"
+  }
 };
 daryl.supressWarnings = true; // to keep es-lint off my back
 
 let delilah = {
   name: "Delilah",
-  subjectPronoun: "she",
-  possessivePronoun: "her"
+  demographic: {
+    subjectPronoun: "she",
+    possessivePronoun: "her",
+  },
+  academicStatus: {
+    level: "on-track"
+  }
 };
 delilah.supressWarnings = true; // to keep es-lint off my back
 
