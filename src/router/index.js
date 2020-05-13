@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import SummaryOverview from "@/views/SummaryOverview";
+import SummaryOverview from "@/views/summary/SummaryOverview";
 import AssessmentsOverview from "@/views/AssessmentsOverview";
 import HowToHelpOverview from "@/views/HowToHelpOverview";
 
