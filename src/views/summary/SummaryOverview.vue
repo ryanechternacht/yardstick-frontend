@@ -28,15 +28,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
-    return {
-      student: {
-        name: "Daryl",
-        subjectPronoun: "he",
-        possessivePronoun: "his"
-      }
-    };
+    return {};
+  },
+  computed: {
+    ...mapGetters("student", { student: "getStudent" })
   }
 };
 </script>
