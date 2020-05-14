@@ -30,7 +30,6 @@ export default {
   },
   getters: {
     getStudent(state) {
-      console.log('getStudent');
       return state.student;
     }
   },

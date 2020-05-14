@@ -25,22 +25,13 @@
 
 <script>
 import * as d3 from "d3";
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
       xScale: null,
       yScale: null,
-      assessments: [
-        {
-          name: "PreACT 8/9",
-          status: "on-track"
-        },
-        {
-          name: "NWEA MAP - Mathematics",
-          status: "at-risk"
-        }
-      ],
       headerRow: [
         { value: "off-track", display: "Off Track" },
         { value: "at-risk", display: "At Risk" },
@@ -69,7 +60,8 @@ export default {
   computed: {
     columnCenter() {
       return this.xScale.bandwidth() / 2;
-    }
+    },
+    ...mapGetters("assessment", { assessments: "getOverview" })
   },
   methods: {
     translate(x, y) {
