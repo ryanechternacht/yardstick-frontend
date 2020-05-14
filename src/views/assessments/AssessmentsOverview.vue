@@ -15,9 +15,10 @@
         v-for="(a, i) in assessments"
         :key="a.name"
         :transform="translate(xScale(a.status), yScale(i))"
+        @click="openAssessment(a.id)"
       >
-        <rect :width="xScale.bandwidth()" height="30" fill="#eee" />
-        <text y="20" :x="columnCenter" text-anchor="middle">{{a.name}}</text>
+        <rect :width="xScale.bandwidth()" height="30" fill="#eee" class="pointer" />
+        <text y="20" :x="columnCenter" text-anchor="middle" class="pointer">{{a.name}}</text>
       </g>
     </svg>
   </div>
@@ -66,10 +67,20 @@ export default {
   methods: {
     translate(x, y) {
       return `translate(${x}, ${y})`;
+    },
+    openAssessment(id) {
+      console.log(id);
+      this.$router.push({
+        name: "assessment",
+        params: { assessmentId: id }
+      });
     }
   }
 };
 </script>
 
 <style>
+.pointer {
+  cursor: pointer;
+}
 </style>

@@ -2,11 +2,13 @@
 let darylOverview = [
   {
     name: "PreACT 8/9",
-    status: "on-track"
+    status: "on-track",
+    id: 1
   },
   {
     name: "NWEA MAP - Mathematics",
-    status: "at-risk"
+    status: "at-risk",
+    id: 2
   }
 ];
 darylOverview.supressWarnings = true; // to keep es-lint off my back
@@ -14,11 +16,13 @@ darylOverview.supressWarnings = true; // to keep es-lint off my back
 let delilahOverview = [
   {
     name: "PreACT 8/9",
-    status: "off-track"
+    status: "off-track",
+    id: 1
   },
   {
     name: "NWEA MAP - Mathematics",
-    status: "advanced"
+    status: "advanced",
+    id: 2
   }
 ]
 delilahOverview.supressWarnings = true; // to keep es-lint off my back

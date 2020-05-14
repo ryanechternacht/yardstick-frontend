@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import SummaryOverview from "@/views/summary/SummaryOverview";
 import AssessmentsOverview from "@/views/assessments/AssessmentsOverview";
+import AssessmentOverview from "@/views/assessments/AssessmentOverview";
 import HowToHelpOverview from "@/views/HowToHelpOverview";
 
 Vue.use(VueRouter);
@@ -21,6 +22,13 @@ const routes = [
     path: "/assessments",
     name: "assessments",
     component: AssessmentsOverview
+  },
+  // TODO nest?
+  {
+    path: "/assessment/:assessmentId",
+    name: "assessment",
+    component: AssessmentOverview,
+    props: true
   },
   {
     path: "/how-to-help",
