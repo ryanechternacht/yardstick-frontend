@@ -1,41 +1,71 @@
+import * as _ from "lodash";
+
 // TEST DATA
-let darylOverview = [
+let darylAssessments = [
   {
     name: "PreACT 8/9",
     status: "on-track",
-    id: 1
+    id: 1,
+    result: {
+      average: 220,
+      minimum: 200,
+      maximum: 250,
+      score: 239
+    }
   },
   {
     name: "NWEA MAP - Mathematics",
     status: "at-risk",
-    id: 2
+    id: 2,
+    result: {
+      average: 220,
+      minimum: 200,
+      maximum: 250,
+      score: 209
+    }
   }
 ];
-darylOverview.supressWarnings = true; // to keep es-lint off my back
+darylAssessments.supressWarnings = true; // to keep es-lint off my back
 
-let delilahOverview = [
+let delilahAssessments = [
   {
     name: "PreACT 8/9",
     status: "off-track",
-    id: 1
+    id: 3,
+    result: {
+      average: 235,
+      minimum: 200,
+      maximum: 250,
+      score: 239
+    }
   },
   {
     name: "NWEA MAP - Mathematics",
     status: "advanced",
-    id: 2
+    id: 4,
+    result: {
+      average: 235,
+      minimum: 200,
+      maximum: 250,
+      score: 209
+    }
   }
-]
-delilahOverview.supressWarnings = true; // to keep es-lint off my back
+];
+delilahAssessments.supressWarnings = true; // to keep es-lint off my back
 
 export default {
   namespaced: true,
   state: {
-    overview: darylOverview,
-    // overview: delilahOverview
+    assessments: darylAssessments,
+    // assessments: delilahAssessments
   },
   getters: {
     getOverview(state) {
-      return state.overview;
+      return state.assessments;
+    },
+    getAssessment: state => id => {
+      let items = _.filter(state.assessments, a => a.id == id);
+      return items.length ? items[0] : {};
     }
   },
   mutations: {
