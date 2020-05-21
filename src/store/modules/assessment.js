@@ -16,6 +16,28 @@ let darylAssessments = [
       minimum: 200,
       maximum: 250,
       scores: [208, 222, 214, 226, 234, 242]
+    },
+    breakdown: {
+      achievement: 70,
+      growth: 98,
+      topics: [
+        {
+          topic: "Geometry",
+          score: 40
+        },
+        {
+          topic: "Statistics and Probability",
+          score: 60
+        },
+        {
+          topic: "Operations and Algeabraic Thinking",
+          score: 70
+        },
+        {
+          topic: "The Real and Complex Number System",
+          score: 80
+        }
+      ]
     }
   },
   {
@@ -32,6 +54,28 @@ let darylAssessments = [
       minimum: 200,
       maximum: 250,
       scores: [224, 228, 240, 242, 240, 248]
+    },
+    breakdown: {
+      achievement: 40,
+      growth: 20,
+      topics: [
+        {
+          topic: "Geometry",
+          score: 90
+        },
+        {
+          topic: "Statistics and Probability",
+          score: 60
+        },
+        {
+          topic: "Operations and Algeabraic Thinking",
+          score: 20
+        },
+        {
+          topic: "The Real and Complex Number System",
+          score: 30
+        }
+      ]
     }
   }
 ];
@@ -52,6 +96,28 @@ let delilahAssessments = [
       minimum: 200,
       maximum: 250,
       scores: [224, 218, 214, 224, 240, 234]
+    },
+    breakdown: {
+      achievement: 100,
+      growth: 90,
+      topics: [
+        {
+          topic: "Geometry",
+          score: 100
+        },
+        {
+          topic: "Statistics and Probability",
+          score: 80
+        },
+        {
+          topic: "Operations and Algeabraic Thinking",
+          score: 95
+        },
+        {
+          topic: "The Real and Complex Number System",
+          score: 90
+        }
+      ]
     }
   },
   {
@@ -68,6 +134,28 @@ let delilahAssessments = [
       minimum: 200,
       maximum: 250,
       scores: [208, 210, 200, 202, 200, 202]
+    },
+    breakdown: {
+      achievement: 50,
+      growth: 40,
+      topics: [
+        {
+          topic: "Geometry",
+          score: 30
+        },
+        {
+          topic: "Statistics and Probability",
+          score: 40
+        },
+        {
+          topic: "Operations and Algeabraic Thinking",
+          score: 60
+        },
+        {
+          topic: "The Real and Complex Number System",
+          score: 25
+        }
+      ]
     }
   }
 ];

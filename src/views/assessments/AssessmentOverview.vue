@@ -10,7 +10,7 @@
         y2="150"
         stroke="gray"
       />
-      <circle cy="100" :cx="scale(assessment.overview.score)" r="10" fill="red" />
+      <circle cy="100" :cx="scale(assessment.overview.score)" r="20" fill="#ddd" />
     </svg>
 
     <h4>{{student.name}}'s progress over time</h4>
@@ -21,7 +21,7 @@
       <!-- TODO use an actual line -->
       <circle
         v-for="(s, i) in assessment.results.scores"
-        :key="s"
+        :key="i"
         :cx="scale2x(i)"
         :cy="scale2y(s)"
         r="5"
@@ -30,7 +30,7 @@
     </svg>
 
     <div class="center-align pointer" @click="openBreakdown()">
-      <div>See More NWEA MAP Mathematic's Information</div>
+      <div>See More {{assessment.name}} Information</div>
       <div>v</div>
     </div>
 
