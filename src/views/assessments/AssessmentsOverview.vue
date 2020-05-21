@@ -69,9 +69,8 @@ export default {
       return `translate(${x}, ${y})`;
     },
     openAssessment(id) {
-      console.log(id);
       this.$router.push({
-        name: "assessment",
+        name: "assessment-overview",
         params: { assessmentId: id }
       });
     }

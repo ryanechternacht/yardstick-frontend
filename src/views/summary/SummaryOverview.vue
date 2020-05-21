@@ -4,7 +4,6 @@
 
     <h3 id class="center">
       {{student.name}} is
-      <!-- <span class="at-risk">At Risk</span> -->
       <student-status :student="student" />
       <br />
       Based on {{student.demographic.possessivePronoun}} scores

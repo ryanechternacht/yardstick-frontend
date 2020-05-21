@@ -6,22 +6,32 @@ let darylAssessments = [
     name: "PreACT 8/9",
     status: "on-track",
     id: 1,
-    result: {
+    overview: {
       average: 220,
       minimum: 200,
       maximum: 250,
       score: 239
+    },
+    results: {
+      minimum: 200,
+      maximum: 250,
+      scores: [208, 222, 214, 226, 234, 242]
     }
   },
   {
     name: "NWEA MAP - Mathematics",
     status: "at-risk",
     id: 2,
-    result: {
+    overview: {
       average: 220,
       minimum: 200,
       maximum: 250,
       score: 209
+    },
+    results: {
+      minimum: 200,
+      maximum: 250,
+      scores: [224, 228, 240, 242, 240, 248]
     }
   }
 ];
@@ -32,22 +42,32 @@ let delilahAssessments = [
     name: "PreACT 8/9",
     status: "off-track",
     id: 3,
-    result: {
+    overview: {
       average: 235,
       minimum: 200,
       maximum: 250,
       score: 239
+    },
+    results: {
+      minimum: 200,
+      maximum: 250,
+      scores: [224, 218, 214, 224, 240, 234]
     }
   },
   {
     name: "NWEA MAP - Mathematics",
     status: "advanced",
     id: 4,
-    result: {
+    overvie: {
       average: 235,
       minimum: 200,
       maximum: 250,
       score: 209
+    },
+    results: {
+      minimum: 200,
+      maximum: 250,
+      scores: [208, 210, 200, 202, 200, 202]
     }
   }
 ];
