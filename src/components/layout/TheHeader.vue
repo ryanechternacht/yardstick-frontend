@@ -25,7 +25,19 @@ export default {
   },
   methods: {
     updateCurrentArea() {
-      this.area = this.$route.matched.length && this.$route.matched[0].name;
+      // This is dumb -- i'm just too lazy to nest the routes
+      if (this.$route.matched.length) {
+        let path = this.$route.matched[0].path;
+        if (path.startsWith("/assessment")) {
+          this.area = "assessments";
+        } else if (path.startsWith("/summary")) {
+          this.area = "summary";
+        } else if (path.startsWith("/how-to-help")) {
+          this.area = "how-to-help";
+        } else {
+          this.area = "";
+        }
+      }
     }
   },
   watch: {
