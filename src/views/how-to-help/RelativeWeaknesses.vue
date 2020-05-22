@@ -1,5 +1,5 @@
 <template>
-  <div>How to Help page</div>
+  <div>relative weaknesses</div>
 </template>
 
 <script>

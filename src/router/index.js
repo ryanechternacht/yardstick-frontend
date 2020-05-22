@@ -8,7 +8,8 @@ import AssessmentOverview from "@/views/assessments/AssessmentOverview";
 import AssessmentDetails from "@/views/assessments/AssessmentDetails";
 import AssessmentDetailsTable from "@/views/assessments/AssessmentDetailsTable";
 
-import HowToHelpOverview from "@/views/HowToHelpOverview";
+import RelativeStrengths from "@/views/how-to-help/RelativeStrengths";
+import RelativeWeaknesses from "@/views/how-to-help/RelativeWeaknesses";
 
 
 Vue.use(VueRouter);
@@ -48,9 +49,14 @@ const routes = [
     props: true
   },
   {
-    path: "/how-to-help",
-    name: "how-to-help",
-    component: HowToHelpOverview
+    path: "/how-to-help/strengths",
+    name: "relative-strengths",
+    component: RelativeStrengths
+  },
+  {
+    path: "/how-to-help/weaknesses",
+    name: "relative-weaknesses",
+    component: RelativeWeaknesses
   }
 ];
 

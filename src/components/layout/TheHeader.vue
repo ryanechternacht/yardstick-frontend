@@ -7,7 +7,10 @@
       <b-navbar-nav>
         <b-nav-item :to="{name: 'summary'}" :class="{active: area == 'summary'}">Summary</b-nav-item>
         <b-nav-item :to="{name: 'assessments'}" :class="{active: area == 'assessments'}">Assessments</b-nav-item>
-        <b-nav-item :to="{name: 'how-to-help'}" :class="{active: area == 'how-to-help'}">How to Help</b-nav-item>
+        <b-nav-item
+          :to="{name: 'relative-strengths'}"
+          :class="{active: area == 'how-to-help'}"
+        >How to Help</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
