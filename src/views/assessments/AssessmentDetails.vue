@@ -47,7 +47,7 @@
       </div>
 
       <div class="center-align pointer" @click="openDetailsTable()">
-        <div>See More NWEA MAP Mathematic's Information</div>
+        <div>See a Detailed Score Table</div>
         <div>v</div>
       </div>
     </div>
@@ -110,7 +110,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .bottom-nav {
   display: flex;
   justify-content: space-evenly;

@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #status-label {
   font-weight: bold;
   text-decoration: underline;
