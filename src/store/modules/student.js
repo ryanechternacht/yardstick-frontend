@@ -1,6 +1,6 @@
 // TEST DATA
 let daryl = {
-  name: "Daryl",
+  name: "Darryl",
   demographic: {
     subjectPronoun: "he",
     possessivePronoun: "his",

@@ -10,7 +10,7 @@ import AssessmentDetailsTable from "@/views/assessments/AssessmentDetailsTable";
 
 import RelativeStrengths from "@/views/how-to-help/RelativeStrengths";
 import RelativeWeaknesses from "@/views/how-to-help/RelativeWeaknesses";
-
+import SuggestedSupports from "@/views/how-to-help/SuggestedSupports";
 
 Vue.use(VueRouter);
 
@@ -57,6 +57,11 @@ const routes = [
     path: "/how-to-help/weaknesses",
     name: "relative-weaknesses",
     component: RelativeWeaknesses
+  },
+  {
+    path: "/how-to-help/suggested-supports",
+    name: "suggested-supports",
+    component: SuggestedSupports
   }
 ];
 
