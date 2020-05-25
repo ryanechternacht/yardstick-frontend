@@ -4,7 +4,7 @@
 
     <h3 id class="center">
       {{student.name}} is
-      <student-status :student="student" />
+      <student-status :academic-status="student.academicStatus" />
       <br />
       Based on {{student.demographic.possessivePronoun}} scores
       <br />on the PreACT 8/9, Forward Exam and NWEA MAP.
