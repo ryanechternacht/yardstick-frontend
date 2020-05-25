@@ -1,8 +1,11 @@
 <template>
   <span
     id="status-label"
-    :class="{'at-risk': student.academicStatus.level == 'at-risk',
-             'on-track': student.academicStatus.level == 'on-track'}"
+    :class="{'off-tack': student.academicStatus.level == 'off-track',
+             'at-risk': student.academicStatus.level == 'at-risk',
+             'likely-on-track': student.academicStatus.level == 'likely-on-track',
+             'on-track': student.academicStatus.level == 'on-track',
+             'advanced': student.academicStatus.level == 'advanced'}"
   >At Risk</span>
 </template>
 
@@ -13,17 +16,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+// @import "@/assets/yardstick.scss";
+
 #status-label {
   font-weight: bold;
   text-decoration: underline;
-}
-
-.at-risk {
-  color: orange;
-}
-
-.on-track {
-  color: green;
 }
 </style>

@@ -2,5 +2,52 @@ $theme-colors: (
   "primary": 	#3f2e4f,
 );
 
+$off-track: red;
+$at-risk: orange;
+$likely-on-track: yellow;
+$on-track: green;
+$advanced: blue;
+
+.off-track {
+  color: $off-track;
+}
+
+.off-track-bg {
+  background-color: $off-track;
+}
+
+.at-risk {
+  color: $at-risk;
+}
+
+.at-risk-bg {
+  background-color: $at-risk;
+}
+
+.likely-on-track {
+  color: $likely-on-track;
+}
+
+.likely-on-track-bg {
+  background-color: $likely-on-track;
+}
+
+.on-track {
+  color: $on-track;
+}
+
+.on-track-bg {
+  background-color: $on-track;
+}
+
+.advanced {
+  color: $advanced;
+}
+
+.advanced-bg {
+  background-color: $advanced;
+}
+
+
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
