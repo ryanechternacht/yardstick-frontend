@@ -40,17 +40,12 @@
       />
     </svg>
 
-    <div class="bottom-nav">
-      <div class="center-align pointer" @click="openOverview()">
-        <div>^</div>
-        <div>Back to the Overview</div>
-      </div>
-
-      <div class="center-align pointer" @click="openDetailsTable()">
-        <div>See a Detailed Score Table</div>
-        <div>v</div>
-      </div>
-    </div>
+    <bottom-navigation
+      backText="Back to the Overview"
+      :backRoute="assessmentOverviewRoute"
+      nextText="See a Detailed Score Table"
+      :nextRoute="assessmentDetailsTableRoute"
+    />
 
     <div class="spacer" />
   </div>
@@ -59,8 +54,10 @@
 <script>
 import { mapGetters } from "vuex";
 import * as d3 from "d3";
+import BottomNavigation from "@/components/layout/BottomNavigation";
 
 export default {
+  components: { BottomNavigation },
   props: ["assessmentId"],
   data() {
     return {
@@ -91,20 +88,18 @@ export default {
     ...mapGetters("student", { student: "getStudent" }),
     assessment() {
       return this.getAssessment(this.assessmentId);
-    }
-  },
-  methods: {
-    openOverview() {
-      this.$router.push({
+    },
+    assessmentOverviewRoute() {
+      return {
         name: "assessment-overview",
         params: { assessmentId: this.assessmentId }
-      });
+      };
     },
-    openDetailsTable() {
-      this.$router.push({
+    assessmentDetailsTableRoute() {
+      return {
         name: "assessment-details-table",
         params: { assessmentId: this.assessmentId }
-      });
+      };
     }
   }
 };
