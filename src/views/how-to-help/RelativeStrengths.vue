@@ -8,22 +8,34 @@
       <div>
         <div class="center-align">Shooting Star</div>
         <img src="@/assets/toll-road.svg" height="150" width="150" />
-        <div class="center-align">Learn More</div>
+        <div class="center-align">
+          Learn More
+          <extra-info-icon />
+        </div>
       </div>
       <div>
         <div class="center-align">Top of class</div>
         <img src="@/assets/healthcare-and-medical.svg" height="150" width="150" />
-        <div class="center-align">Learn More</div>
+        <div class="center-align">
+          Learn More
+          <extra-info-icon />
+        </div>
       </div>
       <div>
         <div class="center-align">Math Wizard</div>
         <img src="@/assets/nurse.svg" height="150" width="150" />
-        <div class="center-align">Learn More</div>
+        <div class="center-align">
+          Learn More
+          <extra-info-icon />
+        </div>
       </div>
       <div>
         <div class="center-align">Mr. Consistent</div>
         <img src="@/assets/plumber.svg" height="150" width="150" />
-        <div class="center-align">Learn More</div>
+        <div class="center-align">
+          Learn More
+          <extra-info-icon />
+        </div>
       </div>
     </div>
 
@@ -37,9 +49,10 @@
 
 <script>
 import BottomNavigation from "@/components/layout/BottomNavigation";
+import ExtraInfoIcon from "@/components/inform/ExtraInfoIcon";
 
 export default {
-  components: { BottomNavigation },
+  components: { BottomNavigation, ExtraInfoIcon },
   computed: {
     relativeWeaknessesRoute() {
       return {

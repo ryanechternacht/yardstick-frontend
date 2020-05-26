@@ -3,27 +3,23 @@
     <h3>{{assessment.name}} > Breakdown</h3>
     <svg width="800" height="150">
       <line x1="100" x2="700" y1="75" y2="75" stroke="gray" />
-      <circle cy="75" :cx="lineScale(assessment.breakdown.achievement)" r="40" fill="#ddd" />
-      <text
-        text-anchor="middle"
-        y="75"
-        :x="lineScale(assessment.breakdown.achievement)"
-      >{{assessment.breakdown.achievement}}</text>
-      <text
-        text-anchor="middle"
-        y="20"
-        :x="lineScale(assessment.breakdown.achievement)"
-      >Achievement</text>
+
+      <g :transform="translateAchievement">
+        <text text-anchor="middle" y="20">Achievement</text>
+        <extra-info-icon-svg y="0" x="50" />
+        <circle cy="75" r="40" fill="#ddd" />
+        <text text-anchor="middle" y="75">{{assessment.breakdown.achievement}}</text>
+      </g>
     </svg>
     <svg width="800" height="150">
       <line x1="100" x2="700" y1="75" y2="75" stroke="gray" />
-      <circle cy="75" :cx="lineScale(assessment.breakdown.growth)" r="40" fill="#ddd" />
-      <text
-        text-anchor="middle"
-        y="75"
-        :x="lineScale(assessment.breakdown.growth)"
-      >{{assessment.breakdown.growth}}</text>
-      <text text-anchor="middle" y="20" :x="lineScale(assessment.breakdown.growth)">Growth</text>
+
+      <g :transform="translateGrowth">
+        <text text-anchor="middle" y="20">Growth</text>
+        <extra-info-icon-svg y="0" x="32" />
+        <circle cy="75" r="40" fill="#ddd" />
+        <text text-anchor="middle" y="75">{{assessment.breakdown.growth}}</text>
+      </g>
     </svg>
 
     <h4>Scores by Topic</h4>
@@ -54,10 +50,12 @@
 <script>
 import { mapGetters } from "vuex";
 import * as d3 from "d3";
+
 import BottomNavigation from "@/components/layout/BottomNavigation";
+import ExtraInfoIconSvg from "@/components/inform/ExtraInfoIconSvg";
 
 export default {
-  components: { BottomNavigation },
+  components: { BottomNavigation, ExtraInfoIconSvg },
   props: ["assessmentId"],
   data() {
     return {
@@ -100,6 +98,14 @@ export default {
         name: "assessment-details-table",
         params: { assessmentId: this.assessmentId }
       };
+    },
+    translateAchievement() {
+      let x = this.lineScale(this.assessment.breakdown.achievement);
+      return `translate(${x}, 0)`;
+    },
+    translateGrowth() {
+      let x = this.lineScale(this.assessment.breakdown.growth);
+      return `translate(${x}, 0)`;
     }
   }
 };

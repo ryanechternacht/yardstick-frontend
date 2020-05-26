@@ -10,7 +10,11 @@
         y2="150"
         stroke="gray"
       />
-      <circle cy="100" :cx="scale(assessment.overview.score)" r="20" fill="#ddd" />
+      <g :transform="achievementScoreTranslate">
+        <circle r="40" fill="#ddd" />
+        <text text-anchor="middle" y="5">{{assessment.overview.score}}</text>
+        <extra-info-icon-svg x="15" y="-20" />
+      </g>
     </svg>
 
     <h4>{{student.name}}'s progress over time</h4>
@@ -41,10 +45,12 @@
 <script>
 import { mapGetters } from "vuex";
 import * as d3 from "d3";
+
 import BottomNavigation from "@/components/layout/BottomNavigation";
+import ExtraInfoIconSvg from "@/components/inform/ExtraInfoIconSvg";
 
 export default {
-  components: { BottomNavigation },
+  components: { BottomNavigation, ExtraInfoIconSvg },
   props: ["assessmentId"],
   data() {
     return {
@@ -88,6 +94,10 @@ export default {
     },
     assessmentBreakdownNavigationText() {
       return `See More ${this.assessment.name} Information`;
+    },
+    achievementScoreTranslate() {
+      let x = this.scale(this.assessment.overview.score);
+      return `translate(${x}, 100)`;
     }
   }
 };
