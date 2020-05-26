@@ -58,17 +58,12 @@
 
     <div class="spacer" />
 
-    <div class="bottom-nav">
-      <div class="center-align pointer" @click="openStrengths()">
-        <div>^</div>
-        <div>Return to Strengths</div>
-      </div>
-
-      <div class="center-align pointer" @click="openSuggestedSupports()">
-        <div>See Suggested Supports</div>
-        <div>v</div>
-      </div>
-    </div>
+    <bottom-navigation
+      backText="Return to Strengths"
+      :backRoute="relativeStrengthsRoute"
+      nextText="See Suggested Supports"
+      :nextRoute="suggestedSupportsRoute"
+    />
 
     <div class="spacer" />
   </div>
@@ -76,21 +71,21 @@
 
 <script>
 import { mapGetters } from "vuex";
+import BottomNavigation from "@/components/layout/BottomNavigation";
 
 export default {
+  components: { BottomNavigation },
   computed: {
-    ...mapGetters("student", { student: "getStudent" })
-  },
-  methods: {
-    openStrengths() {
-      this.$router.push({
+    ...mapGetters("student", { student: "getStudent" }),
+    relativeStrengthsRoute() {
+      return {
         name: "relative-strengths"
-      });
+      };
     },
-    openSuggestedSupports() {
-      this.$router.push({
+    suggestedSupportsRoute() {
+      return {
         name: "suggested-supports"
-      });
+      };
     }
   }
 };
@@ -146,16 +141,7 @@ export default {
   height: 50px;
 }
 
-.bottom-nav {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .center-align {
   text-align: center;
-}
-
-.pointer {
-  cursor: pointer;
 }
 </style>

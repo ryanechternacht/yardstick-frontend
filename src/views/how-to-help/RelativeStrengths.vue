@@ -29,20 +29,22 @@
 
     <div class="spacer" />
 
-    <div class="center-align pointer" @click="openAreasForGrowth()">
-      <div>Click to See More</div>
-      <div>v</div>
-    </div>
+    <bottom-navigation nextText="Click to See More" :nextRoute="relativeWeaknessesRoute" />
+
+    <div class="spacer" />
   </div>
 </template>
 
 <script>
+import BottomNavigation from "@/components/layout/BottomNavigation";
+
 export default {
-  methods: {
-    openAreasForGrowth() {
-      this.$router.push({
+  components: { BottomNavigation },
+  computed: {
+    relativeWeaknessesRoute() {
+      return {
         name: "relative-weaknesses"
-      });
+      };
     }
   }
 };
@@ -60,9 +62,5 @@ export default {
 
 .center-align {
   text-align: center;
-}
-
-.pointer {
-  cursor: pointer;
 }
 </style>

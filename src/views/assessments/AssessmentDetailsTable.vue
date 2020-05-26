@@ -116,10 +116,10 @@
       </tbody>
     </table>
 
-    <div class="center-align pointer" @click="openBreakdown()">
-      <div>^</div>
-      <div>Return to {{assessment.name}} Breakdown</div>
-    </div>
+    <bottom-navigation
+      :backText="assessmentBreakdownNavigationText"
+      :backRoute="assessmentBreakdownRoute"
+    />
 
     <div class="spacer" />
   </div>
@@ -127,8 +127,10 @@
 
 <script>
 import { mapGetters } from "vuex";
+import BottomNavigation from "@/components/layout/BottomNavigation";
 
 export default {
+  components: { BottomNavigation },
   props: ["assessmentId"],
   data() {
     return {};
@@ -138,14 +140,15 @@ export default {
     ...mapGetters("student", { student: "getStudent" }),
     assessment() {
       return this.getAssessment(this.assessmentId);
-    }
-  },
-  methods: {
-    openBreakdown() {
-      this.$router.push({
+    },
+    assessmentBreakdownNavigationText() {
+      return `Return to ${this.assessment.name} Breakdown`;
+    },
+    assessmentBreakdownRoute() {
+      return {
         name: "assessment-details",
         params: { assessmentId: this.assessmentId }
-      });
+      };
     }
   }
 };
@@ -180,13 +183,5 @@ td {
 
 .spacer {
   height: 50px;
-}
-
-.center-align {
-  text-align: center;
-}
-
-.pointer {
-  cursor: pointer;
 }
 </style>

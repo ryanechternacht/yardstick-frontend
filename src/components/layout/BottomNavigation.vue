@@ -6,8 +6,12 @@
       :class="{pointer: backRoute}"
       @click="goBack()"
     >
-      <div>^</div>
-      <div>{{backText || "Back"}}</div>
+      <div class="nav-row">
+        <svg height="16" width="44">
+          <path d="M 0 16 l 22 -16 l 22 16 l -3 0 l -19 -13 l -19 13 Z" />
+        </svg>
+      </div>
+      <div class="nav-row">{{backText || "Back"}}</div>
     </div>
     <div
       v-if="shouldRenderNext"
@@ -15,8 +19,12 @@
       :class="{pointer: nextRoute}"
       @click="gotoNext()"
     >
-      <div>{{nextText || "Next"}}</div>
-      <div>v</div>
+      <div class="nav-row">{{nextText || "Next"}}</div>
+      <div class="nav-row">
+        <svg height="16" width="44">
+          <path d="M 0 0 l 22 16 l 22 -16 l -3 0 l -19 13 l -19 -13 Z" />
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -63,7 +71,7 @@ export default {
   cursor: pointer;
 }
 
-.spacer {
-  height: 50px;
+.nav-row {
+  line-height: 36px;
 }
 </style>

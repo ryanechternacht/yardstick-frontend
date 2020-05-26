@@ -29,10 +29,10 @@
       />
     </svg>
 
-    <div class="center-align pointer" @click="openBreakdown()">
-      <div>See More {{assessment.name}} Information</div>
-      <div>v</div>
-    </div>
+    <bottom-navigation
+      :nextText="assessmentBreakdownNavigationText"
+      :nextRoute="assessmentBreakdownRoute"
+    />
 
     <div class="spacer" />
   </div>
@@ -41,8 +41,10 @@
 <script>
 import { mapGetters } from "vuex";
 import * as d3 from "d3";
+import BottomNavigation from "@/components/layout/BottomNavigation";
 
 export default {
+  components: { BottomNavigation },
   props: ["assessmentId"],
   data() {
     return {
@@ -77,28 +79,21 @@ export default {
     ...mapGetters("student", { student: "getStudent" }),
     assessment() {
       return this.getAssessment(this.assessmentId);
-    }
-  },
-  methods: {
-    openBreakdown() {
-      this.$router.push({
+    },
+    assessmentBreakdownRoute() {
+      return {
         name: "assessment-details",
         params: { assessmentId: this.assessmentId }
-      });
+      };
+    },
+    assessmentBreakdownNavigationText() {
+      return `See More ${this.assessment.name} Information`;
     }
   }
 };
 </script>
 
 <style scoped>
-.center-align {
-  text-align: center;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
 .spacer {
   height: 50px;
 }

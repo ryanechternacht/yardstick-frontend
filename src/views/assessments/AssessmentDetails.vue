@@ -106,19 +106,6 @@ export default {
 </script>
 
 <style scoped>
-.bottom-nav {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.center-align {
-  text-align: center;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
 .spacer {
   height: 50px;
 }
