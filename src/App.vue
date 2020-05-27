@@ -1,24 +1,29 @@
 <template>
   <div id="app">
-    <the-header></the-header>
-    <div class="container main-view">
-      <router-view />
-    </div>
+    <the-header />
+    <b-container>
+      <the-breadcrumbs />
+      <div class="main-view">
+        <router-view />
+      </div>
+    </b-container>
   </div>
 </template>
 
 <script>
-import TheHeader from "@/components/layout/TheHeader.vue";
+import TheHeader from "@/components/layout/TheHeader";
+import TheBreadcrumbs from "@/components/layout/TheBreadcrumbs";
 
 export default {
   name: "App",
   components: {
-    TheHeader
+    TheHeader,
+    TheBreadcrumbs
   }
 };
 </script>
 
-<style>
+<style scoped>
 .main-view {
   margin-top: 20px;
 }
