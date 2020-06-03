@@ -28,7 +28,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
+
 import StudentStatus from "@/components/summary/StudentStatus";
 
 export default {
@@ -38,8 +39,21 @@ export default {
   data() {
     return {};
   },
+  created() {
+    this.updateBreadcrumbs({
+      breadcrumbs: [
+        {
+          text: "Summary",
+          active: true
+        }
+      ]
+    });
+  },
   computed: {
     ...mapGetters("student", { student: "getStudent" })
+  },
+  methods: {
+    ...mapActions("breadcrumbs", ["updateBreadcrumbs"])
   }
 };
 </script>

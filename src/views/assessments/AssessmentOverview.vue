@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import * as d3 from "d3";
 
 import BottomNavigation from "@/components/layout/BottomNavigation";
@@ -55,7 +55,8 @@ export default {
   data() {
     return {
       scale: null,
-      scale2: null
+      scale2x: null,
+      scale2y: null
     };
   },
   created() {
@@ -79,6 +80,19 @@ export default {
         this.assessment.results.maximum
       ])
       .rangeRound([350, 50]);
+
+    this.updateBreadcrumbs({
+      breadcrumbs: [
+        {
+          text: "Assessments",
+          to: { name: "assessments" }
+        },
+        {
+          text: this.assessment.name,
+          active: true
+        }
+      ]
+    });
   },
   computed: {
     ...mapGetters("assessment", ["getAssessment"]),
@@ -99,6 +113,9 @@ export default {
       let x = this.scale(this.assessment.overview.score);
       return `translate(${x}, 100)`;
     }
+  },
+  methods: {
+    ...mapActions("breadcrumbs", ["updateBreadcrumbs"])
   }
 };
 </script>

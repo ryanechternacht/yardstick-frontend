@@ -1,27 +1,19 @@
 <template>
-  <b-breadcrumb :items="items" />
+  <b-breadcrumb :items="breadcrumbs" />
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "the-breadcrumbs",
   data() {
     return {
-      items: [
-        {
-          text: "Admin",
-          href: "#"
-        },
-        {
-          text: "Manage",
-          href: "#"
-        },
-        {
-          text: "Library",
-          active: true
-        }
-      ]
+      items: []
     };
+  },
+  computed: {
+    ...mapGetters("breadcrumbs", { breadcrumbs: "getBreadcrumbs" })
   }
 };
 </script>
@@ -29,6 +21,7 @@ export default {
 <style scoped lang="scss">
 .breadcrumb {
   background-color: transparent;
+  padding-left: 0;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {

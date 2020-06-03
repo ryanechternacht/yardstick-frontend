@@ -70,11 +70,30 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
+
 import BottomNavigation from "@/components/layout/BottomNavigation";
 
 export default {
   components: { BottomNavigation },
+  created() {
+    this.updateBreadcrumbs({
+      breadcrumbs: [
+        {
+          text: "How to Help",
+          active: true
+        },
+        {
+          text: "Strengths",
+          to: { name: "relative-strengths" }
+        },
+        {
+          text: "Weaknesses",
+          active: true
+        }
+      ]
+    });
+  },
   computed: {
     ...mapGetters("student", { student: "getStudent" }),
     relativeStrengthsRoute() {
@@ -87,6 +106,9 @@ export default {
         name: "suggested-supports"
       };
     }
+  },
+  methods: {
+    ...mapActions("breadcrumbs", ["updateBreadcrumbs"])
   }
 };
 </script>

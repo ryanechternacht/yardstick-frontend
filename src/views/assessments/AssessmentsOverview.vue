@@ -26,7 +26,7 @@
 
 <script>
 import * as d3 from "d3";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -57,6 +57,15 @@ export default {
       .scaleBand()
       .domain(rows)
       .rangeRound([50, 350]);
+
+    this.updateBreadcrumbs({
+      breadcrumbs: [
+        {
+          text: "Assessments",
+          active: true
+        }
+      ]
+    });
   },
   computed: {
     columnCenter() {
@@ -73,7 +82,8 @@ export default {
         name: "assessment-overview",
         params: { assessmentId: id }
       });
-    }
+    },
+    ...mapActions("breadcrumbs", ["updateBreadcrumbs"])
   }
 };
 </script>

@@ -48,17 +48,36 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 import BottomNavigation from "@/components/layout/BottomNavigation";
 import ExtraInfoIcon from "@/components/inform/ExtraInfoIcon";
 
 export default {
   components: { BottomNavigation, ExtraInfoIcon },
+  created() {
+    this.updateBreadcrumbs({
+      breadcrumbs: [
+        {
+          text: "How to Help",
+          active: true
+        },
+        {
+          text: "Strengths",
+          active: true
+        }
+      ]
+    });
+  },
   computed: {
     relativeWeaknessesRoute() {
       return {
         name: "relative-weaknesses"
       };
     }
+  },
+  methods: {
+    ...mapActions("breadcrumbs", ["updateBreadcrumbs"])
   }
 };
 </script>
