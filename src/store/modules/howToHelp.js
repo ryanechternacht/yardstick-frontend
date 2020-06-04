@@ -25,7 +25,7 @@ export default {
         tags: ["Weekly", "Flashcards"],
         body: `Knowing Darryl needs increased support to build out his undersatnding of grade level appropriate vocabulary
                helping him work through a set of flashcards is a quick way to help him feel more comfortable when tackling
-               challenging textx.`,
+               challenging texts.`,
         actionPlanLink: "",
         id: 3
       }

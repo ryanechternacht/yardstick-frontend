@@ -1,8 +1,8 @@
 <template>
   <div>
     <h4>{{support.title}}</h4>
-    <div>{{support.tags}}</div>
-    <div>{{support.body}}</div>
+    <suggested-support-tags :tags="support.tags" class="mb-10" />
+    <div class="mb-10">{{support.body}}</div>
     <div class="right">
       <b-button variant="primary">See the Action Plan</b-button>
     </div>
@@ -10,11 +10,17 @@
 </template>
 
 <script>
+import SuggestedSupportTags from "./SuggestedSupportTags";
+
 export default {
   name: "suggested-support",
-  props: ["support"]
+  props: ["support"],
+  components: { SuggestedSupportTags }
 };
 </script>
 
 <style>
+.mb-10 {
+  margin-bottom: 10px;
+}
 </style>

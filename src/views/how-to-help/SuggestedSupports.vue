@@ -16,6 +16,13 @@
       <suggested-support :support="s" />
       <div class="spacer" />
     </div>
+
+    <bottom-navigation
+      backText="Head Back to Areas for Growth"
+      :backRoute="relativeWeaknessesRoute"
+    />
+
+    <div class="spacer" />
   </div>
 </template>
 
@@ -23,9 +30,10 @@
 import { mapGetters, mapActions } from "vuex";
 
 import SuggestedSupport from "@/components/how-to-help/suggested-supports/SuggestedSupport";
+import BottomNavigation from "@/components/layout/BottomNavigation";
 
 export default {
-  components: { SuggestedSupport },
+  components: { SuggestedSupport, BottomNavigation },
 
   created() {
     this.updateBreadcrumbs({
@@ -51,7 +59,12 @@ export default {
   },
   computed: {
     ...mapGetters("student", { student: "getStudent" }),
-    ...mapGetters("howToHelp", { supports: "getSupports" })
+    ...mapGetters("howToHelp", { supports: "getSupports" }),
+    relativeWeaknessesRoute() {
+      return {
+        name: "relative-weaknesses"
+      };
+    }
   },
   methods: {
     ...mapActions("breadcrumbs", ["updateBreadcrumbs"])
