@@ -23,4 +23,9 @@ export default {
 .mb-10 {
   margin-bottom: 10px;
 }
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
 </style>

@@ -80,9 +80,4 @@ export default {
 .spacer {
   height: 50px;
 }
-
-.right {
-  display: flex;
-  justify-content: flex-end;
-}
 </style>
