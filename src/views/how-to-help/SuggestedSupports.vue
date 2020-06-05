@@ -76,8 +76,4 @@ export default {
 .center-align {
   text-align: center;
 }
-
-.spacer {
-  height: 50px;
-}
 </style>

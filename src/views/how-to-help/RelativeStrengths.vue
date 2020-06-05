@@ -57,8 +57,4 @@ export default {
   display: flex;
   justify-content: space-evenly;
 }
-
-.spacer {
-  height: 50px;
-}
 </style>

@@ -159,10 +159,6 @@ export default {
   color: black;
 }
 
-.spacer {
-  height: 50px;
-}
-
 .center-align {
   text-align: center;
 }

@@ -64,7 +64,7 @@ export default {
 }
 
 #top-spacer {
-  height: 100px;
+  height: 6rem;
 }
 
 #actions {

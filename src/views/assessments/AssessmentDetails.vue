@@ -112,7 +112,4 @@ export default {
 </script>
 
 <style scoped>
-.spacer {
-  height: 50px;
-}
 </style>

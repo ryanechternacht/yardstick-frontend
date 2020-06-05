@@ -180,8 +180,4 @@ td {
   color: blue;
   font-weight: bold;
 }
-
-.spacer {
-  height: 50px;
-}
 </style>

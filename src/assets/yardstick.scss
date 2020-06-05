@@ -49,6 +49,9 @@ $advanced: blue;
   background-color: $advanced;
 }
 
+.spacer {
+  height: 3rem;
+}
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
