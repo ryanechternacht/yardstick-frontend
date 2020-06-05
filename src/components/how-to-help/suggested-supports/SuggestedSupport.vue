@@ -1,8 +1,8 @@
 <template>
   <div>
     <h4>{{support.title}}</h4>
-    <suggested-support-tags :tags="support.tags" class="mb-10" />
-    <div class="mb-10">{{support.body}}</div>
+    <suggested-support-tags :tags="support.tags" class="mb" />
+    <div class="mb">{{support.body}}</div>
     <div class="right">
       <b-button variant="primary">See the Action Plan</b-button>
     </div>
@@ -20,8 +20,8 @@ export default {
 </script>
 
 <style scoped>
-.mb-10 {
-  margin-bottom: 10px;
+.mb {
+  margin-bottom: 0.5em;
 }
 
 .right {

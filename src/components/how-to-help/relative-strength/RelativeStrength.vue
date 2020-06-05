@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="center-align mb-10">{{strength.title}}</div>
-    <img :src="strength.icon" height="150" width="150" class="mb-10 center-align" />
+    <div class="center-align mb">{{strength.title}}</div>
+    <img :src="strength.icon" height="150" width="150" class="mb center-align" />
     <div class="center-align display-block">
       <b-button
         v-b-tooltip.click.blur.v-primary.bottom
@@ -30,8 +30,8 @@ export default {
   text-align: center;
 }
 
-.mb-10 {
-  margin-bottom: 10px;
+.mb {
+  margin-bottom: 0.5em;
 }
 
 .display-block {
