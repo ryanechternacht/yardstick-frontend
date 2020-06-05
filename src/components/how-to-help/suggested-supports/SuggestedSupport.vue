@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .mb-10 {
   margin-bottom: 10px;
 }

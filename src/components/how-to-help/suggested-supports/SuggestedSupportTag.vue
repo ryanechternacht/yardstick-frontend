@@ -9,7 +9,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .tag {
   background-color: #eee;
   padding: 4px 12px;

@@ -29,11 +29,36 @@ export default {
         actionPlanLink: "",
         id: 3
       }
+    ],
+    strengths: [
+      {
+        title: "Shooting Star",
+        icon: "/images/toll-road.svg",
+        details: "Darryl grew more than 98% of his peers on this winter's Math - NWEA MAP Assessment"
+      },
+      {
+        title: "Top of Class",
+        icon: "/images/healthcare-and-medical.svg",
+        details: "Darryl has the highest NWEA MAP score in The Real and Complex Number System in his class. Is ice cream in order?"
+      },
+      {
+        title: "Math Wizard",
+        icon: "/images/nurse.svg",
+        details: "Darryl is Proficient or On Track across all of his Math assessments"
+      },
+      {
+        title: "Mr. Consistent",
+        icon: "/images/plumber.svg",
+        details: "Darryl has scored Proficient on the Forward exam in math five years in a row"
+      }
     ]
   },
   getters: {
     getSupports(state) {
       return state.supports;
+    },
+    getStrengths(state) {
+      return state.strengths;
     }
   },
   mutations: {
