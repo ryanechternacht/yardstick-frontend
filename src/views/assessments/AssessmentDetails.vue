@@ -1,26 +1,9 @@
 <template>
   <div>
     <h3>{{assessment.name}} > Breakdown</h3>
-    <svg width="800" height="150">
-      <line x1="100" x2="700" y1="75" y2="75" stroke="gray" />
+    <tetherball-chart label="Achievement" :val="assessment.breakdown.achievement" />
 
-      <g :transform="translateAchievement">
-        <text text-anchor="middle" y="20">Achievement</text>
-        <extra-info-icon-svg y="0" x="50" />
-        <circle cy="75" r="40" fill="#ddd" />
-        <text text-anchor="middle" y="75">{{assessment.breakdown.achievement}}</text>
-      </g>
-    </svg>
-    <svg width="800" height="150">
-      <line x1="100" x2="700" y1="75" y2="75" stroke="gray" />
-
-      <g :transform="translateGrowth">
-        <text text-anchor="middle" y="20">Growth</text>
-        <extra-info-icon-svg y="0" x="32" />
-        <circle cy="75" r="40" fill="#ddd" />
-        <text text-anchor="middle" y="75">{{assessment.breakdown.growth}}</text>
-      </g>
-    </svg>
+    <tetherball-chart label="Growth" :val="assessment.breakdown.growth" />
 
     <h4>Scores by Topic</h4>
     <svg width="800" height="400">
@@ -51,11 +34,11 @@
 import { mapGetters } from "vuex";
 import * as d3 from "d3";
 
+import TetherballChart from "@/components/assessments/charts/TetherballChart";
 import BottomNavigation from "@/components/layout/BottomNavigation";
-import ExtraInfoIconSvg from "@/components/inform/ExtraInfoIconSvg";
 
 export default {
-  components: { BottomNavigation, ExtraInfoIconSvg },
+  components: { BottomNavigation, TetherballChart },
   props: ["assessmentId"],
   data() {
     return {
