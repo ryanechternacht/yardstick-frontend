@@ -1,6 +1,6 @@
 # yardstick-frontend
 
-This was an early attempt at a yardstick front-end built in clojurescript and leveraging some custom d3 components. 
+This was an early attempt at a yardstick front-end. This eventually became yardstick-web (although I forget why I migrated now). 
 
 ## Project setup
 ```
